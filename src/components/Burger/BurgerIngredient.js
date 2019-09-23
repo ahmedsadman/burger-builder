@@ -70,7 +70,7 @@ const Seeds1 = styled.div`
 	transform: rotate(-20deg);
 	box-shadow: inset -2px -3px #c9c9c9;
 
-	&: after {
+	&:after {
 		content: '';
 		width: 100%;
 		height: 100%;
@@ -83,7 +83,7 @@ const Seeds1 = styled.div`
 		box-shadow: inset -1px 2px #c9c9c9;
 	}
 
-	&: before {
+	&:before {
 		content: '';
 		width: 100%;
 		height: 100%;
@@ -108,7 +108,7 @@ const Seeds2 = styled.div`
 	transform: rotate(-20deg);
 	box-shadow: inset -2px -3px #c9c9c9;
 
-	&: before {
+	&:before {
 		content: '';
 		width: 100%;
 		height: 100%;

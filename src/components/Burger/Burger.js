@@ -3,13 +3,22 @@ import styled from 'styled-components';
 import BurgerIngredient from './BurgerIngredient';
 
 const burger = props => {
+	let transformedIngredients = Object.keys(props.ingredients)
+		.map(igKey => {
+			return [...Array(props.ingredients[igKey])].map((_, i) => (
+				<BurgerIngredient key={igKey + i} type={igKey} />
+			));
+		})
+		.reduce((arr, el) => arr.concat(el), []);
+
+	if (transformedIngredients.length === 0) {
+		transformedIngredients = <p>Please start adding ingredients</p>;
+	}
+
 	return (
 		<Burger>
 			<BurgerIngredient type='bread-top' />
-			<BurgerIngredient type='cheese' />
-			<BurgerIngredient type='meat' />
-			<BurgerIngredient type='cheese' />
-			<BurgerIngredient type='meat' />
+			{transformedIngredients}
 			<BurgerIngredient type='bread-bottom' />
 		</Burger>
 	);
@@ -19,6 +28,7 @@ const Burger = styled.div`
 	width: 100%;
 	margin: auto;
 	height: 250px;
+	overflow: auto;
 	text-align: center;
 	font-weight: bold;
 	font-size: 1.2rem;
