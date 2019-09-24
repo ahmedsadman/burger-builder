@@ -45,7 +45,7 @@ const Burger = styled.div`
 
 	@media (min-width: 1000px) and (min-height: 700px) {
 		width: 600px;
-		height: 300px;
+		height: 400px;
 	}
 `;
 
