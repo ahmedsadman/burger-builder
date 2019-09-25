@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Logo';
+import NavigationItems from '../Navigation/NavigationItems';
 
 const toolbar = props => (
 	<Toolbar>
 		<div>Menu</div>
 		<Logo />
-		<Nav></Nav>
+		<Nav>
+			<NavigationItems />
+		</Nav>
 	</Toolbar>
 );
 
