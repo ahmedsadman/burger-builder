@@ -15,6 +15,13 @@ const NavigationItem = styled.li`
 	display: flex;
 	height: 100%;
 	align-items: center;
+
+	@media (min-width: 500px) {
+		width: auto;
+		height: auto;
+		display: block;
+		box-sizing: border-box;
+	}
 `;
 
 const A = styled.a`
@@ -28,9 +35,7 @@ const A = styled.a`
 
 	&:active,
 	&:hover {
-		background-color: #8f5c2c;
-		border-bottom: 4px solid #40a4c8;
-		color: white;
+		color: #40a4c8;
 	}
 
 	${props =>
@@ -40,6 +45,20 @@ const A = styled.a`
 		border-bottom: 4px solid #40a4c8;
 		color: white;
     `}
+
+	@media (max-width: 500px) {
+		color: #8f5c2c;
+		border: none;
+		width: 100%;
+		height: auto;
+
+		${props =>
+			props.active &&
+			`
+			background-color: transparent;
+			color: #40a4c8;
+    	`}
+	}
 `;
 
 export default navigationItem;

@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Logo';
 import NavigationItems from '../Navigation/NavigationItems';
+import DrawerToggle from '../Navigation/DrawerToggle';
 
 const toolbar = props => (
 	<Toolbar>
-		<div>Menu</div>
-		<Logo />
+		<DrawerToggle clicked={props.drawerToggleClicked} />
+		<Logo height='80%' />
 		<Nav>
 			<NavigationItems />
 		</Nav>
@@ -30,6 +31,9 @@ const Toolbar = styled.div`
 
 const Nav = styled.nav`
 	height: 100%;
+	@media (max-width: 500px) {
+		display: none;
+	}
 `;
 
 export default toolbar;
